@@ -1,0 +1,42 @@
+# do not touch this line
+configVersion: 2
+
+description: crosstalkConsumerTest
+keywords: Crosstalk Consumer Test
+name: crosstalkConsumerTest
+
+screens:
+    - - globalScreen
+      - specificScreen
+      - eventScreen
+
+dataTypes:
+    globalEmitter:
+        globalValue: integer
+    specificEmitter:
+        specificValue: string
+    eventEmitter:
+        eventFloat1: float
+        eventFloat2: float
+
+widgets:
+    globalScreen:
+        type: globalEmitter
+        display: digit
+        keys:
+            - globalValue
+        label: "Global Received Value"
+    specificScreen:
+        type: specificEmitter
+        display: digit
+        keys:
+            - specificValue
+        label: "App Specific Received Value"
+    eventScreen:
+        type: eventEmitter
+        keys:
+            - eventFloat1
+            - eventFloat2
+        display: list-group
+        label: "Event Received Value"
+    
