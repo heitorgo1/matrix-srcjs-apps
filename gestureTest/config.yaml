@@ -5,7 +5,30 @@ description: test gestures
 keywords: test
 name: gestureTest
 
+
+screens:
+  - - gestureLocation
+
 services:
-  fistWatch:
+  gestureTest:
     engine: gesture
     type: palm
+
+dataTypes:
+  palmLocation:
+    x: integer
+    y: interger
+    width: integer
+    height: integer
+
+
+widgets:
+  gestureLocation:
+    type: palmLocation
+    keys:
+      - x
+      - y
+      - width
+      - height
+    display: list-group
+    label: 'Detected Palm Location'

@@ -8,4 +8,45 @@ name: faceTest
 services:
   faceTest:
     engine: detection
-    type: demographics
+    type: face
+
+
+screens: 
+  - - locationScreen
+
+
+dataTypes:
+  faceLocation:
+    x: integer
+    y: integer
+    width: integer
+    height: integer
+
+widgets:
+  locationScreen:
+    type: faceLocation
+    keys:
+      - x
+      - y
+      - width
+      - height
+    display: list-group
+    label: 'Detected Face Location'
+
+#face demographics palm thumb-up fist pinch
+
+#OK
+#engine: gesture
+#type: palm
+
+#FAIL
+#engine: gesture
+#type: thumb-up
+
+#FAIL
+#engine: gesture
+#type: fist
+
+#FAIL
+#engine: detection
+#type: fist
