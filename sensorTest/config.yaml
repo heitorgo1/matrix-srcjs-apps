@@ -13,8 +13,12 @@ sensors:
   - pressure
   - altitude
 
+screens:
+  - - temperatureScreen
+
 dataTypes:
-  temperature: float
+  temperature: 
+    value: float
   humidity: float
   accelerometer: float
   gyroscope:
@@ -24,3 +28,11 @@ dataTypes:
   uv: float
   pressure: float
   altitude: float
+
+widgets:
+  temperatureScreen:
+    type: temperature
+    key: value
+    display: digit
+    format: round
+    label: temperature ºC

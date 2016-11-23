@@ -17,7 +17,7 @@ services:
 dataTypes:
   palmLocation:
     x: integer
-    y: interger
+    y: integer
     width: integer
     height: integer
 

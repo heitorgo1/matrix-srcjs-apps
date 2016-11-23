@@ -1,9 +1,11 @@
-This is your app folder. Please only change app.js and config.yaml.
+# Crosstalk Producer Test
 
-Do not modify index.js.
+Consume values emitted by the Crosstalk Producer Test.
 
-You may add packages via `npm`, they will be installed when the application is deployed to a device. 
+## Dashboard
 
-## Developer Documentation
+3 screens are shown corresponding to the 3 modes of communication between applications.
 
-http://github.io/matrix-io/matrix-documentation/
+The first screen show a number that is being emitted globally by the Crosstalk Producer Test.
+The second screen show a character that is beign emitted to this specific application.
+The third screen show two float numbers being emitted by an event that this application is listening to.
