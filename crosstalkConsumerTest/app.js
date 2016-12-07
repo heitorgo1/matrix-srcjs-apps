@@ -1,17 +1,19 @@
-// app code goes here
-// matrix.init()....
-//
-// have fun
 
 
-// It's working, but error occurs, Channel Closed
 matrix.on(function(payload){
-    if (typeof payload.value === 'number')
-        matrix.type("globalEmitter").send(payload);
-    else
-        matrix.type("specificEmitter").send(payload);
-});
+    var type = payload.type ? payload.type : '';
 
+    if (type === 'app-message') {
+        var randValNumber = (typeof payload.randVal !== 'undefined') ? payload.randVal : payload.payload.randVal;
+        if (typeof randValNumber === 'number')
+            matrix.type("globalEmitter").send({globalValue: randValNumber});
+    } else if (type === 'app-crosstalkConsumerTest-message') {
+        var randValString = (typeof payload.randVal !== 'undefined') ? payload.randVal : payload.payload.randVal;
+        if (typeof randValString === 'string')
+            matrix.type("specificEmitter").send({ specificValue: randValString});
+    }
+
+});
 
 // event emitter
 matrix.on('random', function(payload){
